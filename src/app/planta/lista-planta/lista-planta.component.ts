@@ -11,6 +11,8 @@ import { Planta } from '../planta';
 })
 export class ListaPlantaComponent implements OnInit {
   plantas: Planta[] = [];
+  totalInterior = 0;
+  totalExterior = 0;
 
   constructor(
     private plantaService: PlantaService
@@ -23,6 +25,12 @@ export class ListaPlantaComponent implements OnInit {
   getPlantas(): void {
     this.plantaService.getPlantas().subscribe((data) => {
       this.plantas = data;
+      this.getTotales();
     });
+  }
+
+  getTotales(): void {
+    this.totalInterior = this.plantas.filter(x => x.tipo == "Interior").length;
+    this.totalExterior = this.plantas.filter(x => x.tipo == "Exterior").length;;
   }
 }
