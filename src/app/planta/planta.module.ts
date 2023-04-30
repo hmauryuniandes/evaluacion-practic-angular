@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListaPlantaComponent } from './lista-planta/lista-planta.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
@@ -9,7 +10,9 @@ import { ListaPlantaComponent } from './lista-planta/lista-planta.component';
     ListaPlantaComponent
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    HttpClientModule
+  ],
+  providers: [HttpClient]
 })
 export class PlantaModule { }

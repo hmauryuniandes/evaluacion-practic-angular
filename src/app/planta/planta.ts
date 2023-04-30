@@ -1,18 +1,18 @@
 export class Planta {
-  id: string;
+  id: number;
   nombre_comun: string;
   nombre_cientifico: string;
   tipo: string;
-  altura_maxima: string;
+  altura_maxima: number;
   clima: string;
   sustrato_siembra: string;
 
   constructor(
-    id: string,
+    id: number,
     nombre_comun: string,
     nombre_cientifico: string,
     tipo: string,
-    altura_maxima: string,
+    altura_maxima: number,
     clima: string,
     sustrato_siembra: string
   ) {
